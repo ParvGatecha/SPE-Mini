@@ -1,0 +1,13 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Pull Docker Image
+      command: docker pull parvg/scientific-calculator
+
+    - name: Run Container
+      command: docker run -d -p 8000:8000 parvg/scientific-calculator

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <script>
+        async function calculate(operation) {
+            let x = document.getElementById("x").value;
+            let b = document.getElementById("b").value;
+            let url = `http://localhost:8000/` + operation + `/` + x;
+            if (operation === "power") {
+                url += "/" + b;
+            }
+            let response = await fetch(url);
+            let data = await response.json();
+            document.getElementById("result").innerText = "Result: " + data.result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Scientific Calculator</h1>
+    <input type="number" id="x" placeholder="Enter value x">
+    <input type="number" id="b" placeholder="Enter value b (for power)" style="display:none">
+    <button onclick="calculate('sqrt')">Square Root</button>
+    <button onclick="calculate('factorial')">Factorial</button>
+    <button onclick="calculate('ln')">Natural Log</button>
+    <button onclick="calculate('power')">Power</button>
+    <p id="result"></p>
+    <script>
+        document.querySelector("button[onclick*='power']").addEventListener("click", function() {
+            document.getElementById("b").style.display = "inline";
+        });
+    </script>
+</body>
+</html>
