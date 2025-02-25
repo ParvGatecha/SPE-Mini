@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Deploy with Ansible') {
             steps {
-                sh 'wsl --install'
+                bat 'where wsl'
                 sh 'ansible-playbook -i inventory deploy.yml'
             }
         }

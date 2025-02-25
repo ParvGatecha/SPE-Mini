@@ -4,6 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scientific Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        .calculator {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+            display: inline-block;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
     <script>
         async function calculate(operation) {
             let x = document.getElementById("x").value;
@@ -19,18 +64,16 @@
     </script>
 </head>
 <body>
-    <h1>Scientific Calculator</h1>
-    <input type="number" id="x" placeholder="Enter value x">
-    <input type="number" id="b" placeholder="Enter value b (for power)" style="display:none">
-    <button onclick="calculate('sqrt')">Square Root</button>
-    <button onclick="calculate('factorial')">Factorial</button>
-    <button onclick="calculate('ln')">Natural Log</button>
-    <button onclick="calculate('power')">Power</button>
-    <p id="result"></p>
-    <script>
-        document.querySelector("button[onclick*='power']").addEventListener("click", function() {
-            document.getElementById("b").style.display = "inline";
-        });
-    </script>
+    <div class="calculator">
+        <h1>Scientific Calculator</h1>
+        <input type="number" id="x" placeholder="Enter value x">
+        <input type="number" id="b" placeholder="Power (b)">
+        <br>
+        <button onclick="calculate('sqrt')">Square Root</button>
+        <button onclick="calculate('factorial')">Factorial</button>
+        <button onclick="calculate('ln')">Natural Log</button>
+        <button onclick="calculate('power')">Power</button>
+        <p id="result"></p>
+    </div>
 </body>
 </html>
