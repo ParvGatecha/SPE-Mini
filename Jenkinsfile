@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/scientific-calculator.git'
+                git "https://github.com/ParvGatecha/SPE-Mini.git"
             }
         }
         stage('Test') {
@@ -13,14 +13,14 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t scientific-calculator .'
+                sh 'docker build -t parvg/scientific-calculator .'
             }
         }
         stage('Push to Docker Hub') {
             steps {
-                withDockerRegistry([credentialsId: 'docker-hub-creds', url: '']) {
-                    sh 'docker tag scientific-calculator your-docker-hub/scientific-calculator'
-                    sh 'docker push your-docker-hub/scientific-calculator'
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
+                    sh 'echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin'
+                    sh 'docker parvg/scientific-calculator'
                 }
             }
         }
