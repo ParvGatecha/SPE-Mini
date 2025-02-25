@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'pip install pytest httpx'
+                sh 'pip install pytest httpx fastapi uvicorn'
                 sh 'pytest test.py'
             }
         }
