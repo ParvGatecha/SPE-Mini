@@ -28,7 +28,13 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                 bat 'where wsl'
-                sh 'ansible-playbook -i inventory deploy.yml'
+                bat '''
+                    wsl <<EOF
+                    echo "Starting WSL"
+                    cd /mnt/c/PHOTOS/Personal/Projects/SPE/MiniProject-main/Mini
+                    ansible-playbook -i inventory deploy.yml
+                    EOF
+                '''
             }
         }
     }
