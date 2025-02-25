@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git "https://github.com/ParvGatecha/SPE-Mini.git"
+                git branch: 'main', url: "https://github.com/ParvGatecha/SPE-Mini.git"
             }
         }
         stage('Test') {
