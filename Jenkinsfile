@@ -29,7 +29,7 @@ pipeline {
             steps {
                 bat 'where wsl'
                 bat 'wsl --cd /mnt/c/PHOTOS/Personal/Projects/SPE/MiniProject-main/Mini'
-                bat 'ansible-playbook -i inventory deploy.yml'
+                bat 'wsl --exec ansible-playbook -i inventory deploy.yml'
             }
         }
     }
