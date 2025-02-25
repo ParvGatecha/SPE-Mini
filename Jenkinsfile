@@ -8,6 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'pip install pytest httpx'
                 sh 'pytest test.py'
             }
         }
