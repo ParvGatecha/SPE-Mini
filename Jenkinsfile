@@ -25,6 +25,12 @@ pipeline {
                 }
             }
         }
+        stage('Clean Up Docker Images') {
+    steps {
+        sh "docker rmi parvg/scientific-calculator || true"  // Remove old images
+        sh "docker rmi parvg/scientific-calculator || true"
+    }
+}
         stage('Deploy with Ansible') {
             steps {
                 bat 'where wsl'
