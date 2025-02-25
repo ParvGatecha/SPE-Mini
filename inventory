@@ -1,2 +1,2 @@
-[containers]
-localhost ansible_connection=local ansible_python_interpreter=C:\Program Files\Python313
+[localhost]
+localhost ansible_connection=local
