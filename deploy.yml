@@ -9,5 +9,7 @@
     - name: Pull Docker Image
       command: docker pull parvg/scientific-calculator
 
+    - name: Stop Existing Containers
+      command: docker stop sci-calc
     - name: Run Container
-      command: docker run -d -p 8000:8000 parvg/scientific-calculator
+      command: docker run -d --name sci-calc -p 8000:8000 parvg/scientific-calculator
