@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'pytest test_main.py'
+                sh 'pytest test.py'
             }
         }
         stage('Build Docker Image') {
