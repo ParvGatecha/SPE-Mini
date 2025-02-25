@@ -28,13 +28,10 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                 bat 'where wsl'
-                bat '''
-                    wsl <<EOF
-                    echo "Starting WSL"
-                    cd /mnt/c/PHOTOS/Personal/Projects/SPE/MiniProject-main/Mini
-                    ansible-playbook -i inventory deploy.yml
-                    EOF
-                '''
+                bat '
+                    wsl --cd /mnt/c/PHOTOS/Personal/Projects/SPE/MiniProject-main/Mini
+                '
+                bat 'ansible-playbook -i inventory deploy.yml'
             }
         }
     }
