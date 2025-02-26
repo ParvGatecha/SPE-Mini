@@ -344,3 +344,5 @@ stage('Deploy with Ansible') {
 
 ## Deployment Complete 🎉
 The scientific calculator container is now up and running! We can access it at `http://localhost:8000`. 
+
+![Scientific-Calculator](/Home.png)
