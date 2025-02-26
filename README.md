@@ -11,7 +11,7 @@
 ## Problem statement
 ![Problem statement]()
 
-More details about the problem statement can be found in [this](./Mini%20Project_Scientific%20Calculator.pdf) document.
+More details about the problem statement can be found in [this](/Mini-Project-Scientific-Calculator.pdf) document.
 
 ---
 
