@@ -1,5 +1,5 @@
 # SPE Miniproject Report
-## Done by: MT2024026 Aryan Rastogi
+## Done by: MT2024108 Parv Gatecha
 
 ---
 
