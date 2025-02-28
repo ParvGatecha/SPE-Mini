@@ -37,7 +37,7 @@ pipeline {
         always {
             script {
                 def status = currentBuild.result ?: 'SUCCESS'
-                mail to: 'gatechaparv@gmail.com',
+                mail to: 'googloid111@gmail.com',
                      subject: "Jenkins Build: ${status}",
                      body: "The Jenkins pipeline execution has completed with status: ${status}.\n\nCheck the Jenkins console for more details: ${env.BUILD_URL}"
             }
