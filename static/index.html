@@ -52,6 +52,10 @@
     <script>
         async function calculate(operation) {
             let x = document.getElementById("x").value;
+            if(x === ""){
+                alert("Please enter a value for a.");
+                return;
+            }
             let b = document.getElementById("b").value;
             let url = `http://localhost:8000/` + operation + `/` + x;
             if (operation === "power") {
