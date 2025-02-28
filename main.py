@@ -23,14 +23,17 @@ def home():
 
 @app.get("/sqrt/{x}")
 def square_root(x: float):
+    if(x<0): return {"result":"Enter valid number"}
     return {"result": math.sqrt(x)}
 
 @app.get("/factorial/{x}")
 def factorial(x: int):
+    if(x<0): return {"result": -1}
     return {"result": math.factorial(x)}
 
 @app.get("/ln/{x}")
 def natural_log(x: float):
+    if(x<0): return {"result":"Enter valid number"}
     return {"result": math.log(x)}
 
 @app.get("/power/{x}/{b}")
