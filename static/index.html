@@ -55,6 +55,10 @@
             let b = document.getElementById("b").value;
             let url = `http://localhost:8000/` + operation + `/` + x;
             if (operation === "power") {
+                if(b === undefined){
+                    alert("Please enter a value for b.");
+                    return;
+                }
                 url += "/" + b;
             }
             let response = await fetch(url);
