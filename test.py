@@ -7,7 +7,7 @@ client = TestClient(app)
 def test_square_root():
     response = client.get("/sqrt/-9")
     assert response.status_code == 200
-    assert response.json()["result"] == 3.0
+    assert response.json()["result"] == "Enter valid number"
 
 def test_factorial():
     response = client.get("/factorial/5")
