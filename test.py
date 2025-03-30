@@ -5,7 +5,7 @@ from main import app
 client = TestClient(app)
 
 def test_square_root():
-    response = client.get("/sqrt/9")
+    response = client.get("/sqrt/-9")
     assert response.status_code == 200
     assert response.json()["result"] == 3.0
 
