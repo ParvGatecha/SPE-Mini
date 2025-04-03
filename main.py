@@ -28,7 +28,7 @@ def square_root(x: float):
 
 @app.get("/factorial/{x}")
 def factorial(x: int):
-    if(x<0): return {"result": -1}
+    if(x<0): return {"result": "Enter valid number"}
     return {"result": math.factorial(x)}
 
 @app.get("/ln/{x}")
