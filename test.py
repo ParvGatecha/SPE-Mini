@@ -16,6 +16,9 @@ def test_factorial():
     response = client.get("/factorial/5")
     assert response.status_code == 200
     assert response.json()["result"] == 120
+    response = client.get("/factorial/-5")
+    assert response.status_code == 200
+    assert response.json()["result"] == "Enter valid number"
 
 def test_natural_log():
     response = client.get("/ln/1")
